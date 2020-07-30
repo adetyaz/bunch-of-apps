@@ -1,13 +1,26 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <!-- <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>-->
-        </div>
-        <router-view />
-    </div>
+    <v-app>
+        <v-content>
+            <div id="app">
+                <!-- <div id="nav"> -->
+                <!-- <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>-->
+                <!-- </div> -->
+                <Calender />
+                <router-view />
+            </div>
+        </v-content>
+    </v-app>
 </template>
 
+<script>
+import Calender from '@/components/Calender.vue'
+export default {
+    components: {
+        Calender,
+    },
+}
+</script>
 <style lang="scss">
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;

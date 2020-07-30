@@ -8,9 +8,15 @@ import camelCase from 'lodash/camelCase';
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import vuetify from './plugins/vuetify';
+import VueTextAreaAutosize from 'vue-textarea-autosize'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
+Vue.use(VueTextAreaAutosize)
     // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
@@ -51,8 +57,25 @@ requireComponent.keys().forEach(fileName => {
 
 Vue.config.productionTip = false
 
+var firebaseConfig = {
+    apiKey: "AIzaSyBYyoKMa2h5ZJFqyCDieuFeuDj9k2FjKkk",
+    authDomain: "vuetify-calender-bfdb1.firebaseapp.com",
+    databaseURL: "https://vuetify-calender-bfdb1.firebaseio.com",
+    projectId: "vuetify-calender-bfdb1",
+    storageBucket: "vuetify-calender-bfdb1.appspot.com",
+    messagingSenderId: "433859057451",
+    appId: "1:433859057451:web:8427fc50c889563fdc176e"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+export const db = firebase.firestore();
+
+
+
 new Vue({
     router,
     store,
-    render: h => h(App),
+    vuetify,
+    render: h => h(App)
 }).$mount('#app')

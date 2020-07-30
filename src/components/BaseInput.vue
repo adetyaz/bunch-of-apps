@@ -1,7 +1,12 @@
 <template>
     <div>
         <label v-if="label">{{ label }}</label>
-        <input @input="updateValue" v-bind="$attrs" :value="value" v-on="listeners" />
+        <input
+            @input="updateValue"
+            v-bind="$attrs"
+            :value="value"
+            v-on="listeners"
+        />
     </div>
 </template>
 
@@ -20,5 +25,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

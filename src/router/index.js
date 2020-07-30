@@ -6,7 +6,8 @@ import CityCard from '@/components/CityCard.vue'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+    {
         path: '/',
         name: 'Home',
         component: Home,
